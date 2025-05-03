@@ -157,6 +157,49 @@
     a:hover {
       text-decoration: underline;
     }
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 2px 2px 10px #25d366;
+    }
+    .whatsapp-float img {
+      width: 40px;
+      height: 40px;
+      margin-top: 10px;
+    }
+    /* Sección de métodos de pago */
+    .metodos-pago {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .metodo-pago {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .metodo-pago img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
     @keyframes fadeInUp {
       from {opacity: 0; transform: translateY(30px);}
       to {opacity: 1; transform: translateY(0);}
@@ -179,7 +222,7 @@
   <header>
     <h1>Venta de Cuentas Streaming "DATEBAYO"</h1>
     <p>Netflix, Disney+, Spotify, HBO Max y más</p>
-    <a href="https://tu-enlace-del-logo.com" target="_blank" class="logo-link">
+    <a href="https://wa.link/tkuw6n" target="_blank" class="logo-link">
       <img src="https://www.dropbox.com/scl/fi/i4q437e9gn5iiqlz18py9/file-4Uyv6HoNNf9Bv5NLwt3AYg.webp?rlkey=qccnchealpu8sy08ga9s8abt6&st=p26lkwj5&raw=1" alt="Tu Logo">
     </a>
   </header>
@@ -193,13 +236,14 @@
       <div class="card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Logo Netflix">
         <h3>Netflix perfil</h3>
-        <p>HORAS DE ENTRETENIMIENO CON LA MEJOR PLATAFORMA </p>
+        <p>HORAS DE ENTRETENIMIENTO CON LA MEJOR PLATAFORMA</p>
         <p><strong>S/7.00</strong></p>
         <button class="boton"
                 onclick="mostrarModal(this)"
                 data-servicio="Netflix"
                 data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-                data-precio="S/7.00">Comprar</button>
+                data-precio="S/7.00"
+                data-whatsapp="https://wa.link/bydoia">Comprar</button>
       </div>
       <div class="card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Logo Disney+">
@@ -210,104 +254,105 @@
                 onclick="mostrarModal(this)"
                 data-servicio="Disney+"
                 data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-                data-precio="S/7.00">Comprar</button>
+                data-precio="S/7.00"
+                data-whatsapp="https://wa.link/rndbl0">Comprar</button>
       </div>
       <div class="card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Logo Spotify">
-        <h3>Spotify individual </h3>
+        <h3>Spotify individual</h3>
         <p>Disfruta de los mejor generos de musica sin limite</p>
         <p><strong>S/10.00</strong></p>
         <button class="boton"
                 onclick="mostrarModal(this)"
                 data-servicio="Spotify"
                 data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-                data-precio="S/10.00">Comprar</button>
+                data-precio="S/10.00"
+                data-whatsapp="https://wa.link/7tqrc5">Comprar</button>
       </div>
-      <!-- Este código incluye solo la parte modificada para insertar dentro de <div class="servicios" id="lista-servicios"> -->
-<div class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Crunchyroll_Logo.svg" alt="Logo Crunchyroll">
-  <h3>Crunchyroll</h3>
-  <p>El mejor anime en un solo lugar </p>
-  <p><strong>S/7.00</strong></p>
-  <button class="boton"
-          onclick="mostrarModal(this)"
-          data-servicio="Crunchyroll"
-          data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-          data-precio="S/7.00">Comprar</button>
-</div>
-
-<div class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Logo Prime Video">
-  <h3>Prime Video</h3>
-  <p>Series y películas de Amazon</p>
-  <p><strong>S/7.00</strong></p>
-  <button class="boton"
-          onclick="mostrarModal(this)"
-          data-servicio="Prime Video"
-          data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-          data-precio="S/7.00">Comprar</button>
-</div>
-
-<div class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_logo.svg" alt="Logo Canva">
-  <h3>Canva Pro</h3>
-  <p>Diseña como un profesional</p>
-  <p><strong>S/10.00</strong></p>
-  <button class="boton"
-          onclick="mostrarModal(this)"
-          data-servicio="Canva Pro"
-          data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-          data-precio="S/10.00">Comprar</button>
-</div>
-
-<div class="card">
-  <img src="https://static.wikia.nocookie.net/freefire/images/e/e7/Pase_Elite_Nov._2020_Icono.png" alt="Pase Booyah FF">
-  <h3>Pase Booyah Free Fire</h3>
-  <p>Consigue el pase élite fácilmente</p>
-  <p><strong>S/10.00</strong></p>
-  <button class="boton"
-          onclick="mostrarModal(this)"
-          data-servicio="Pase Booyah Free Fire"
-          data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-          data-precio="S/10.00">Comprar</button>
-</div>
-
-<div class="card">
-  <img src="https://seeklogo.com/images/F/free-fire-logo-2E10C05D55-seeklogo.com.png" alt="Diamantes FF">
-  <h3>Diamantes Free Fire</h3>
-  <p>Recarga segura y rápida</p>
-  <p><strong>S/10.00</strong></p>
-  <button class="boton"
-          onclick="mostrarModal(this)"
-          data-servicio="Diamantes Free Fire"
-          data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-          data-precio="S/10.00">Comprar</button>
-</div>
-
-<div class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/YouTube_Music_logo.svg" alt="Logo YouTube">
-  <h3>YouTube Familiar</h3>
-  <p>Disfruta YouTube sin anuncios</p>
-  <p><strong>S/12.00</strong></p>
-  <button class="boton"
-          onclick="mostrarModal(this)"
-          data-servicio="YouTube Familiar"
-          data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-          data-precio="S/12.00">Comprar</button>
-</div>
-
-<div class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Paramount%2B_logo.svg" alt="Paramount+">
-  <h3>Paramount+</h3>
-  <p>Películas y series exclusivas</p>
-  <p><strong>S/7.00</strong></p>
-  <button class="boton"
-          onclick="mostrarModal(this)"
-          data-servicio="Paramount+"
-          data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-          data-precio="S/7.00">Comprar</button>
-</div>
-
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5eywBG-I0jaLdGS1VDIY0ZQVd9kKXk9KJlQ&s">
+        <h3>Crunchyroll</h3>
+        <p>El mejor anime en un solo lugar</p>
+        <p><strong>S/6.50</strong></p>
+        <button class="boton"
+                onclick="mostrarModal(this)"
+                data-servicio="Crunchyroll"
+                data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
+                data-precio="S/6.50"
+                data-whatsapp="https://wa.link/esc2tl">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Logo Prime Video">
+        <h3>Prime Video</h3>
+        <p>Series y películas de Amazon</p>
+        <p><strong>S/7.50</strong></p>
+        <button class="boton"
+                onclick="mostrarModal(this)"
+                data-servicio="Prime Video"
+                data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
+                data-precio="S/7.50"
+                data-whatsapp="https://wa.link/rm04l0">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://www.servicioscorporativosperu.com/assets/img/productos/20240816022640.png">
+        <h3>Canva Pro</h3>
+        <p>Diseña como un profesional</p>
+        <p><strong>S/5.50</strong></p>
+        <button class="boton"
+                onclick="mostrarModal(this)"
+                data-servicio="Canva Pro"
+                data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
+                data-precio="S/5.50"
+                data-whatsapp="https://wa.link/chgdw7">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2lJfSqUy9BWlzeJo6y0B6pkKQ3NG24C1deg&s" alt="Pase Booyah FF">
+        <h3>Pase Booyah Free Fire</h3>
+        <p>consigue las recompesas premium</p>
+        <p><strong>S/6.00</strong></p>
+        <button class="boton"
+                onclick="mostrarModal(this)"
+                data-servicio="Pase Booyah Free Fire"
+                data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
+                data-precio="S/6.00"
+                data-whatsapp="https://wa.link/054d09">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaLln9aj5MjsVx-h9PXS2z7TB0t_4Ie97SfQ&s" alt="Diamantes FF">
+        <h3>Diamantes Free Fire</h3>
+        <p>Recarga segura y rápida</p>
+        <p><strong>S/0.00</strong></p>
+        <button class="boton"
+                onclick="mostrarModal(this)"
+                data-servicio="Diamantes Free Fire"
+                data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
+                data-precio="S/0.00"
+                data-whatsapp="https://wa.me/573107734290?text=Hola,%20estoy%20interesado%20en%20comprar%20Diamantes%20Free%20Fire">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHPajj8ZIW45SsYxM2IFuvCSjJtx5wfLH44g&s" alt="Logo YouTube">
+        <h3>YouTube Familiar</h3>
+        <p>Disfruta YouTube sin anuncios</p>
+        <p><strong>S/7.00</strong></p>
+        <button class="boton"
+                onclick="mostrarModal(this)"
+                data-servicio="YouTube Familiar"
+                data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
+                data-precio="S/7.00"
+                data-whatsapp="https://wa.link/wyfslq">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEsVJy2rH5kvID9w1SnZ8nxxLf0yjS9HvmFw&s" alt="Paramount+">
+        <h3>Paramount+</h3>
+        <p>Películas y series exclusivas</p>
+        <p><strong>S/6.00</strong></p>
+        <button class="boton"
+                onclick="mostrarModal(this)"
+                data-servicio="Paramount+"
+                data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
+                data-precio="S/6.00"
+                data-whatsapp="https://wa.link/87jogx">Comprar</button>
+      </div>
       <div class="card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_Max_Logo.svg" alt="Logo HBO Max">
         <h3>HBO Max</h3>
@@ -317,15 +362,45 @@
                 onclick="mostrarModal(this)"
                 data-servicio="HBO Max"
                 data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
-                data-precio="S/7.00">Comprar</button> 
-        
+                data-precio="S/7.00"
+                data-whatsapp="https://wa.link/hcw49h">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvwk4hP3qmr6cmQfMAjvYPDSq3zwc7gusqHA&s" alt="Doxeo">
+        <h3>Doxeo</h3>
+        <p>Te sacamos el C4 completo de cualquier persona que decees </p>
+        <p><strong>S/5.00</strong></p>
+        <button class="boton"
+                onclick="mostrarModal(this)"
+                data-servicio="Doxeo"
+                data-descripcion="DALE EN CONFIRMAR COMPRA PARA DARTE MAS INFORMACION"
+                data-precio="S/5.00"
+                data-whatsapp="https://wa.link/7irksc">Comprar</button>
       </div>
     </div>
   </section>
 
+  <!-- Sección de métodos de pago -->
   <section>
-    <h2>Contacto</h2>
-    <p>Escríbenos por <a href="https://wa.me/573107734290" target="_blank">WhatsApp</a> para más información o realizar tu compra.</p>
+    <h2>Métodos de Pago</h2>
+    <div class="metodos-pago">
+      <div class="metodo-pago">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB2_8h8ilvj56Jzq6sXPnDgJAMEXRrhTXEHQ&s" alt="Yape">
+        <p>Yape</p>
+      </div>
+      <div class="metodo-pago">
+        <img src="https://images.seeklogo.com/logo-png/38/1/plin-logo-png_seeklogo-386806.png" alt="Plin">
+        <p>Plin</p>
+      </div>
+      <div class="metodo-pago">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ahc5nuIWMhvSbrFDktWnODzWkXcM-EmFIQ&s">
+        <p>Transferencia</p>
+      </div>
+      <div class="metodo-pago">
+        <img src="https://seeklogo.com/images/B/bcp-logo-CCCCDA45A9-seeklogo.com.png">
+        <p>BCP</p>
+      </div>
+    </div>
   </section>
 
   <div id="modal" class="modal">
@@ -334,24 +409,38 @@
       <h2 id="modal-title"></h2>
       <p id="modal-desc"></p>
       <p id="modal-price" style="font-weight: bold; margin: 15px 0;"></p>
-      <button class="boton" onclick="alert('Compra realizada. Gracias!')">Confirmar compra</button>
+      <button id="confirmar-compra" class="boton">Confirmar compra</button>
     </div>
   </div>
 
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.link/0fl5ab" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
   <footer>
-    <p>&copy; 2025 Venta de Streaming - Todos los derechos reservados</p>
+    <p>&copy; 2025 Venta de Streaming DATEBAYO- Todos los derechos reservados</p>
   </footer>
 
   <script>
+    let whatsappLink = '';
+    
     function mostrarModal(button) {
       const servicio = button.getAttribute('data-servicio');
       const descripcion = button.getAttribute('data-descripcion');
       const precio = button.getAttribute('data-precio');
+      whatsappLink = button.getAttribute('data-whatsapp');
 
       document.getElementById('modal-title').innerText = servicio;
       document.getElementById('modal-desc').innerText = descripcion;
       document.getElementById('modal-price').innerText = precio;
       document.getElementById('modal').style.display = 'flex';
+      
+      // Configurar el botón de confirmación
+      document.getElementById('confirmar-compra').onclick = function() {
+        window.open(whatsappLink, '_blank');
+        cerrarModal();
+      };
     }
 
     function cerrarModal() {
@@ -370,4 +459,3 @@
   </script>
 </body>
 </html>
-
